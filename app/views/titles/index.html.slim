@@ -1,0 +1,34 @@
+= link_to '新增', new_title_path, class: 'btn btn-primary'
+
+table.table#table-list.sortable-table
+  thead
+    tr
+      th[style="width: 50px"]
+      th[style="width: 100px"]
+      th 名稱
+
+  tbody
+    - @titles.each do |title|
+      tr.item[data-id=title.id]
+        td[style="width: 50px"]
+          span.move
+            = fa_icon('align-justify')
+        td[style="width: 100px"]
+          = link_to edit_title_path(title), class: 'btn btn-primary btn-sm' do
+            = fa_icon('pencil')
+        td.text-left = title.name
+
+javascript:
+  $(function(){
+    $("#table-list").sortable({
+      items: '> tbody tr.item',
+      axis: 'y',
+      handle: '.move',
+      update: function( event, ui ) {
+        var id = ui.item.data('id'),
+            position = $(ui.item).index() + 1;
+
+        $.get('/titles/' + id + '/sort/' + position);
+      }
+    });
+  });

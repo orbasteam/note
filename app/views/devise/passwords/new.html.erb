@@ -1,0 +1,28 @@
+<div class="row">
+
+  <div class="center-block well" style="max-width: 400px">
+    <h2><%= t('page.devise.forget_password') %></h2>
+
+    <%= devise_error_messages! %>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name)) do |f| %>
+
+        <div class="form-group">
+          <%= f.email_field :email, required: true, autofocus: true, placeholder: 'Email', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit t('page.devise.reset_password'), class: 'btn btn-primary' %>
+
+          <div class="pull-right">
+            <%= link_to t('page.devise.back_to_sign_in'), new_user_session_path, class: 'btn btn-default' %>
+          </div>
+
+        </div>
+
+        <hr>
+
+    <% end %>
+  </div>
+
+</div>

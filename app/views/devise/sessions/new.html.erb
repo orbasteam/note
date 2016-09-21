@@ -1,0 +1,53 @@
+<div class="row">
+
+  <div class="center-block well form-block">
+    <h2><%= t('page.devise.sign_in') %></h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <div class="form-group">
+          <%= f.label :email %><br/>
+          <%= f.email_field :email, autofocus: true, class: 'form-control', required: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %><br/>
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control', required: true %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+            <div class="form-group">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+
+              <div class="pull-right">
+                <%= link_to t('page.devise.forget_password'), new_user_password_path %>
+              </div>
+
+            </div>
+
+        <% end -%>
+
+        <div class="form-group">
+          <%= f.submit "Log in", class: 'btn btn-default' %>
+
+          <div class="pull-right">
+            <%= link_to t('page.devise.sign_up'), new_registration_path(resource_name), class: 'btn btn-default' %>
+          </div>
+        </div>
+
+
+        <%= link_to t('page.devise.unreceive_confirmation'), new_confirmation_path(resource_name) %>
+
+        <hr>
+
+        <h4><%= t('page.devise.oauth_login') %></h4>
+
+        <%= link_to user_google_oauth2_omniauth_authorize_path do %>
+          <%= image_tag 'google.png', style: 'width: 40px' %>
+        <% end %>
+
+    <% end %>
+  </div>
+
+</div>

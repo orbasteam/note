@@ -1,0 +1,13 @@
+zh-TW:
+  page:
+    devise:
+      sign_up: '註冊'
+      sign_in: '登入'
+      unreceive_confirmation: '尚未收到驗證碼？'
+      oauth_login: '以其他方式登入'
+      oauth_signup: '以其他方式註冊'
+      back_to_sign_in: '回登入頁'
+      resend_confirmation: '重新發送確認信'
+      forget_password: '忘記密碼'
+      reset_password: '重新設定密碼'
+      password_minimum_length: '最短 %{length}個字元'

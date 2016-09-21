@@ -1,0 +1,17 @@
+- unless flash[:success].nil?
+  .alert.alert-success
+    button.close[data-close="alert" type="button"]
+    span
+      = flash[:success]
+
+- unless flash[:alert].nil?
+  .alert.alert-danger
+    button.close[data-close="alert" type="button"]
+    span
+      = flash[:alert]
+
+- unless flash[:notice].nil?
+  .alert.alert-info
+    button.close[data-close="info" type="button"]
+    span
+      = flash[:notice]

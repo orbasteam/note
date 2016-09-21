@@ -1,0 +1,24 @@
+nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+
+      = link_to '筆記管理系統', authenticated_root_path, class: 'navbar-brand'
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          = link_to new_content_path do
+            = fa_icon('plus')
+            |  新增筆記
+        li
+          = link_to '分類管理', titles_path
+
+        li
+
+      ul.nav.navbar-nav.navbar-right
+        li
+          = link_to '登出', destroy_user_session_path, method: :delete

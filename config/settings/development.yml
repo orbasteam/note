@@ -1,0 +1,10 @@
+oauth:
+  google_client_id:
+  google_client_secret:
+
+smtp:
+  address:
+  port:
+  domain:
+  username:
+  password:

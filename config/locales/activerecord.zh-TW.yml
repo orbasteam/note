@@ -1,0 +1,16 @@
+zh-TW:
+  activerecord:
+    attributes:
+      title:
+        name: '名稱'
+      content:
+        title_id: '分類'
+        subject:  '標題'
+        content:  '內容'
+
+    errors:
+      models:
+        content:
+          attributes:
+            title:
+              required: '請選擇'

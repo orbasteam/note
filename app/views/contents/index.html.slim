@@ -1,0 +1,23 @@
+
+- @titles.each do |title|
+
+  h3 = title.name
+
+  - title.contents.each do |content|
+    .panel.panel-default
+      - if content.subject
+        .panel-heading
+          h3.panel-title
+            = content.subject
+      .panel-body
+        .pull-right
+          .btn-toolbar
+            = link_to edit_content_path(content), class: 'btn btn-default btn-xs' do
+              = fa_icon('pencil')
+            = link_to content_path(content), {method: :delete, data: { confirm: "確定刪除?" }, class: 'btn btn-danger btn-xs'}  do
+              = fa_icon('remove')
+        .ql-snow
+          .ql-editor
+            = content.content.html_safe
+
+  hr

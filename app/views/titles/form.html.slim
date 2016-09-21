@@ -1,0 +1,9 @@
+= form_for @title, html: {class: 'form-horizontal'} do |f|
+
+  .form-group
+    label 名稱
+    = f.text_field :name, class: 'form-control', autofocus: true, required: true
+
+  .btn-toolbar
+    = link_to '回上一頁', titles_path, class: 'btn btn-default'
+    = f.submit '送出', class: 'btn btn-primary'
